@@ -1,0 +1,31 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.3522, 48.8566]
+      },
+      "properties": {
+        "meta_categorie_activite": "Accueil petite enfance",
+        "consommation_declaree": 82714156,
+        "height": 50,
+        "year": 1990
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.3417, 48.8575]
+      },
+      "properties": {
+        "meta_categorie_activite": "Audiovisuel",
+        "consommation_declaree": 152511,
+        "height": 70,
+        "year": 2005
+      }
+    }
+  ]
+}
