@@ -1,54 +1,102 @@
-# React + TypeScript + Vite
+# 3D Building Visualization App
 
-Ce modèle fournit une configuration minimale pour faire fonctionner React avec Vite, HMR et quelques règles ESLint.
+Application web interactive pour visualiser des données de bâtiments en 3D avec des informations sur la consommation énergétique.
 
-Actuellement, deux plugins officiels sont disponibles :
+## Fonctionnalités principales
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) utilise [Babel](https://babeljs.io/) pour le rafraîchissement rapide (Fast Refresh)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) utilise [SWC](https://swc.rs/) pour le rafraîchissement rapide (Fast Refresh)
+### Visualisation des bâtiments et DPE
 
-## Étendre la configuration ESLint
+L'application affiche les bâtiments sur une carte 3D avec :
+- **Couleurs selon la classe énergétique** :
+  - A (vert) à G (marron)
+  - Taille des marqueurs proportionnelle à la consommation
+- **Infobulles détaillées** incluant :
+  - Consommation énergétique (kWh/m²/an)
+  - Estimation des gaz à effet de serre
+  - Surface thermique
+  - Année de construction
+  - Date du DPE
 
-Si vous développez une application de production, nous recommandons de mettre à jour la configuration pour activer les règles de linting sensibles au type :
+### Données utilisées
+- **Fichier GeoJSON principal** : `data/dpe-france.geojson`
+  - Contient toutes les informations DPE
+  - Structure 3D des bâtiments
+- **Données complémentaires** :
+  - `data/consommation-tertiaire-activite.geojson`
+  - `data/operat_data.geojson`
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remplacez ...tseslint.configs.recommended par ceci
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternativement, utilisez ceci pour des règles plus strictes
-    ...tseslint.configs.strictTypeChecked,
-    // Optionnellement, ajoutez ceci pour des règles stylistiques
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // autres options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Navigation interactive
+- Vue 3D avec contrôle de la caméra
+- Barre de recherche intégrée
+- Zoom et rotation des bâtiments
+
+## Technologies utilisées
+
+- Frontend:
+  - React + TypeScript
+  - Vite (build tool)
+  - Three.js (rendu 3D)
+  - Mapbox (fond de carte)
+  
+- Backend:
+  - Node.js
+  - Express
+
+- Données:
+  - GeoJSON (consommation énergétique, DPE)
+
+## Installation
+
+1. Cloner le dépôt :
+```bash
+git clone https://server-rtit-consulting.com/billyan/skills4mind.git
+cd 3d-building-visualization-app
 ```
 
-Vous pouvez également installer [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) et [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) pour des règles spécifiques à React :
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Ajoutez les plugins react-x et react-dom
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // autres règles...
-    // Activez ses règles recommandées pour TypeScript
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+2. Installer les dépendances :
+```bash
+npm install
 ```
+
+3. Lancer l'application :
+```bash
+npm run dev
+```
+
+L'application sera disponible sur http://localhost:5173/
+
+## Configuration technique
+
+### Fichiers clés
+- `src/mapDisplay.js` : 
+  - Charge et affiche les données GeoJSON
+  - Configure le rendu 3D et les infobulles
+- `src/components/Map3D.tsx` : 
+  - Gère la visualisation interactive
+  - Intègre la carte avec React
+
+### Dépendances principales
+- **ESRI ArcGIS API** pour JavaScript :
+  - Visualisation cartographique 3D
+  - Gestion des couches GeoJSON
+  - Widgets interactifs
+- **Three.js** pour le rendu 3D avancé
+
+## Développement
+
+Commandes utiles :
+
+- `npm run dev` : Lance le serveur de développement
+- `npm run build` : Crée une version de production
+- `npm run lint` : Vérifie le code avec ESLint
+- `npm run preview` : Prévisualise la version de production
+
+## Auteurs
+
+- PIERRE STEVE NGWEHA PENI- Développeur principal
+- BILL YANN TUENKAM - Autres contributeurs
+- IZAC TIOTE - Autres contributeurs
+
+## Licence
+
+[MIT](LICENSE) - Libre d'utilisation et modification

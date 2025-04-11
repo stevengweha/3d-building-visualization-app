@@ -17,27 +17,28 @@ const Map3D: React.FC = () => {
     <div id="full">
       <div id="viewDiv" style={{ width: "100%", height: "100vh" }}></div>
       <div className="mentions">
+        
         <h4>
           RÉALISÉ AVEC
           <a
             href="https://developers.arcgis.com/javascript/latest/"
             target="_blank"
           >
-            L'API JAVASCRIPT D'ARCGIS
+              L'API JAVASCRIPT D'ARCGIS
           </a>
           <br />GITHUB :
           <a
             href="https://github.com/JapaLenos/JS-API/tree/main/Jardins-Parisiens"
             target="_blank"
           >
-            @JAPALENOS
+            @ngwehasteve
           </a>
-          <br />DONNÉES ISSUES DU
+          <br />relised by:
           <a
-            href="https://opendata.paris.fr/explore/dataset/arbresremarquablesparis/export/"
+            href="https://github.com/stevengweha"
             target="_blank"
           >
-           steve,bill, izac
+           pierre steve ngweha peni, bill tuenkam yann, izac tiote
           </a>
         </h4>
       </div>

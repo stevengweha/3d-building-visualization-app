@@ -11,7 +11,9 @@
         "meta_categorie_activite": "Accueil petite enfance",
         "consommation_declaree": 82714156,
         "height": 50,
-        "year": 1990
+        "year": 1990,
+        "code_dpe": "B",
+        "empreinte_carbone": 12000
       }
     },
     {
@@ -24,7 +26,399 @@
         "meta_categorie_activite": "Audiovisuel",
         "consommation_declaree": 152511,
         "height": 70,
-        "year": 2005
+        "year": 2005,
+        "code_dpe": "C",
+        "empreinte_carbone": 8000
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.2945, 48.8584]
+      },
+      "properties": {
+        "meta_categorie_activite": "Tourisme",
+        "consommation_declaree": 500000,
+        "height": 324,
+        "year": 1889,
+        "code_dpe": "A",
+        "empreinte_carbone": 5000
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.3333, 48.8606]
+      },
+      "properties": {
+        "meta_categorie_activite": "Culture",
+        "consommation_declaree": 1200000,
+        "height": 30,
+        "year": 1989,
+        "code_dpe": "B",
+        "empreinte_carbone": 10000
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.3730, 48.8462]
+      },
+      "properties": {
+        "meta_categorie_activite": "Éducation",
+        "consommation_declaree": 750000,
+        "height": 20,
+        "year": 2000,
+        "code_dpe": "C",
+        "empreinte_carbone": 7000
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.3499, 48.8534]
+      },
+      "properties": {
+        "meta_categorie_activite": "Santé",
+        "consommation_declaree": 450000,
+        "height": 25,
+        "year": 1995,
+        "code_dpe": "B",
+        "empreinte_carbone": 6000
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [4.8357, 45.7640]
+      },
+      "properties": {
+        "meta_categorie_activite": "Commerce",
+        "consommation_declaree": 980000,
+        "height": 40,
+        "year": 2010,
+        "code_dpe": "C",
+        "empreinte_carbone": 9000
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [5.3698, 43.2965]
+      },
+      "properties": {
+        "meta_categorie_activite": "Industrie",
+        "consommation_declaree": 1500000,
+        "height": 50,
+        "year": 2000,
+        "code_dpe": "D",
+        "empreinte_carbone": 15000
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [1.4442, 43.6047]
+      },
+      "properties": {
+        "meta_categorie_activite": "Logistique",
+        "consommation_declaree": 600000,
+        "height": 35,
+        "year": 2015,
+        "code_dpe": "B",
+        "empreinte_carbone": 8000
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [7.2620, 43.7102]
+      },
+      "properties": {
+        "meta_categorie_activite": "Hôtellerie",
+        "consommation_declaree": 800000,
+        "height": 45,
+        "year": 1998,
+        "code_dpe": "C",
+        "empreinte_carbone": 10000
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [3.0586, 50.6292]
+      },
+      "properties": {
+        "meta_categorie_activite": "Bureau",
+        "consommation_declaree": 720000,
+        "height": 30,
+        "year": 2012,
+        "code_dpe": "B",
+        "empreinte_carbone": 7000
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [4.0483, 49.2583]
+      },
+      "properties": {
+        "meta_categorie_activite": "Banque",
+        "consommation_declaree": 850000,
+        "height": 25,
+        "year": 2008,
+        "code_dpe": "C",
+        "empreinte_carbone": 9000
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [6.1294, 49.6117]
+      },
+      "properties": {
+        "meta_categorie_activite": "Éducation",
+        "consommation_declaree": 950000,
+        "height": 20,
+        "year": 2005,
+        "code_dpe": "B",
+        "empreinte_carbone": 8000
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [7.7486, 48.5839]
+      },
+      "properties": {
+        "meta_categorie_activite": "Hôtellerie",
+        "consommation_declaree": 1100000,
+        "height": 50,
+        "year": 1999,
+        "code_dpe": "C",
+        "empreinte_carbone": 12000
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [1.2132, 45.8352]
+      },
+      "properties": {
+        "meta_categorie_activite": "Santé",
+        "consommation_declaree": 670000,
+        "height": 40,
+        "year": 2015,
+        "code_dpe": "B",
+        "empreinte_carbone": 7000
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [4.6942, 44.5635]
+      },
+      "properties": {
+        "meta_categorie_activite": "Commerce",
+        "consommation_declaree": 980000,
+        "height": 35,
+        "year": 2010,
+        "code_dpe": "C",
+        "empreinte_carbone": 9000
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [5.0415, 47.3220]
+      },
+      "properties": {
+        "meta_categorie_activite": "Industrie",
+        "consommation_declaree": 1500000,
+        "height": 50,
+        "year": 2000,
+        "code_dpe": "D",
+        "empreinte_carbone": 15000
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [1.4442, 43.6047]
+      },
+      "properties": {
+        "meta_categorie_activite": "Logistique",
+        "consommation_declaree": 600000,
+        "height": 35,
+        "year": 2015,
+        "code_dpe": "B",
+        "empreinte_carbone": 8000
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [7.2620, 43.7102]
+      },
+      "properties": {
+        "meta_categorie_activite": "Hôtellerie",
+        "consommation_declaree": 800000,
+        "height": 45,
+        "year": 1998,
+        "code_dpe": "C",
+        "empreinte_carbone": 10000
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [3.8767, 43.6119]
+      },
+      "properties": {
+        "meta_categorie_activite": "Bureau",
+        "consommation_declaree": 720000,
+        "height": 30,
+        "year": 2012,
+        "code_dpe": "B",
+        "empreinte_carbone": 7000
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [4.8357, 45.7640]
+      },
+      "properties": {
+        "meta_categorie_activite": "Banque",
+        "consommation_declaree": 850000,
+        "height": 25,
+        "year": 2008,
+        "code_dpe": "C",
+        "empreinte_carbone": 9000
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [5.3698, 43.2965]
+      },
+      "properties": {
+        "meta_categorie_activite": "Éducation",
+        "consommation_declaree": 950000,
+        "height": 20,
+        "year": 2005,
+        "code_dpe": "B",
+        "empreinte_carbone": 8000
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [6.1294, 49.6117]
+      },
+      "properties": {
+        "meta_categorie_activite": "Hôtellerie",
+        "consommation_declaree": 1100000,
+        "height": 50,
+        "year": 1999,
+        "code_dpe": "C",
+        "empreinte_carbone": 12000
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [1.2132, 45.8352]
+      },
+      "properties": {
+        "meta_categorie_activite": "Santé",
+        "consommation_declaree": 670000,
+        "height": 40,
+        "year": 2015,
+        "code_dpe": "B",
+        "empreinte_carbone": 7000
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [4.6942, 44.5635]
+      },
+      "properties": {
+        "meta_categorie_activite": "Commerce",
+        "consommation_declaree": 980000,
+        "height": 35,
+        "year": 2010,
+        "code_dpe": "C",
+        "empreinte_carbone": 9000
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [5.0415, 47.3220]
+      },
+      "properties": {
+        "meta_categorie_activite": "Industrie",
+        "consommation_declaree": 1500000,
+        "height": 50,
+        "year": 2000,
+        "code_dpe": "D",
+        "empreinte_carbone": 15000
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.2137, 46.2276]
+      },
+      "properties": {
+        "meta_categorie_activite": "Logistique",
+        "consommation_declaree": 600000,
+        "height": 35,
+        "year": 2015,
+        "code_dpe": "B",
+        "empreinte_carbone": 8000
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [7.2620, 43.7102]
+      },
+      "properties": {
+        "meta_categorie_activite": "Hôtellerie",
+        "consommation_declaree": 800000,
+        "height": 45,
+        "year": 1998,
+        "code_dpe": "C",
+        "empreinte_carbone": 10000
       }
     }
   ]

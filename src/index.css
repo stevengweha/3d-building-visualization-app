@@ -117,18 +117,14 @@ button:focus-visible {
 }
 
 .hero {
+  padding: 80px 20px;
   text-align: center;
-  background-color: #2a4d6e;
-  color: #fff;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: #f0f4f8; /* ou une image de fond */
 }
 
 .hero-title {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  line-height: 1.2;
+  font-size: 3rem;
+  margin-bottom: 20px;
 }
 
 .hero-title .highlight {
@@ -137,7 +133,7 @@ button:focus-visible {
 
 .hero-subtitle {
   font-size: 1.2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 8rem;
 }
 
 .explore-button {
@@ -203,3 +199,16 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+.hero-title {
+  margin-bottom: 40px; /* espace entre le h1 et le p */
+}
+
+.hero-subtitle {
+  margin-top: 0;
+  margin-bottom: 40px; /* espace entre le p et le bouton */
+}
+
+.explore-button {
+  margin-top: 20px; /* au cas où le p n’est pas là */
+}
+
