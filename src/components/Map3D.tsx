@@ -15,7 +15,10 @@ const Map3D: React.FC = () => {
 
   return (
     <div id="full">
-      <div id="viewDiv" style={{ width: "100%", height: "100vh" }}></div>
+      
+      <div id="viewDiv" style={{ width: "100%", height: "100vh" }}>
+        
+      </div>
       <div className="mentions">
         
         <h4>
