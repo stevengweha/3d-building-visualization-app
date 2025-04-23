@@ -40,7 +40,7 @@ body{
     font-size: 70%;
     font-family: "Avenir Next", "Avenir", "Helvetica Neue", sans-serif;
     color: rgb(104, 104, 104);
-    position: absolute;
+    /*position: absolute;*/
     z-index: 9;
     text-align: center;
     width : 100%;

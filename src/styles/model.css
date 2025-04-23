@@ -1,0 +1,175 @@
+/* ===== GLOBAL ===== */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f6f8;
+  }
+  
+  /* ===== CONTAINER ===== */
+  .prediction-container {
+    min-height: 100vh;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+    gap: 2rem;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+  }
+  
+  /* === Layout before prediction === */
+  .center-form {
+    flex-direction: column;
+  }
+  
+  /* === Layout after prediction === */
+  .split-view {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  
+  /* ===== FORM + RESULT COMMON ===== */
+  .form-container,
+  .result-container {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 480px;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+  
+  /* ===== FORM FIELDS ===== */
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.2rem;
+  }
+  
+  .form-field label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #333;
+  }
+  
+  .form-field input {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border 0.2s ease;
+  }
+  
+  .form-field input:focus {
+    border-color: #2e7d32;
+    outline: none;
+  }
+  
+  /* ===== BUTTON ===== */
+  button {
+    margin-top: 1rem;
+    padding: 12px 20px;
+    background-color: #2e7d32;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  button:hover {
+    background-color: #1b5e20;
+    transform: scale(1.02);
+  }
+  
+  button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+  }
+  
+  /* ===== TITLE ===== */
+  .prediction-title {
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #2e7d32;
+    font-size: 24px;
+    animation: fadeInDown 0.5s ease;
+  }
+  
+  /* ===== ERROR MESSAGE ===== */
+  .error-message {
+    color: red;
+    margin-top: 1rem;
+    font-weight: 500;
+    animation: shake 0.3s ease;
+  }
+  
+  /* ===== RESULT PART ===== */
+  .result-container h3 {
+    font-size: 26px;
+    color: #2e7d32;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+  
+  .result-container p {
+    margin: 0.5rem 0;
+    font-size: 16px;
+    color: #444;
+    text-align: center;
+  }
+  
+  .result-container .conseil {
+    font-style: italic;
+    margin-top: 1rem;
+    color: #555;
+    text-align: center;
+  }
+  
+  /* ===== CHART ===== */
+  .chart-wrapper {
+    margin: 2rem auto 0;
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+  }
+  
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes shake {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(-5px); }
+    40% { transform: translateX(5px); }
+    60% { transform: translateX(-5px); }
+    80% { transform: translateX(5px); }
+    100% { transform: translateX(0); }
+  }
+  
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    .split-view {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .form-container,
+    .result-container {
+      max-width: 100%;
+    }
+  }
+  

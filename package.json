@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-three/drei": "^10.0.6",
     "@react-three/fiber": "^9.1.2",
+    "express": "^5.1.0",
     "leaflet": "^1.9.4",
     "mapbox-gl": "^3.11.0",
     "papaparse": "^5.5.2",

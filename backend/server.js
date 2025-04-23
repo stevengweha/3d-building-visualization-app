@@ -1,37 +1,70 @@
 const express = require('express');
-const { Pool } = require('pg');
+const cors = require('cors');
+const mysql = require('mysql2');
+require('dotenv').config();
+
 const app = express();
-const port = 3000;
-
-// Configuration de la connexion PostgreSQL
-const pool = new Pool({
-  user: 'votre_utilisateur',
-  host: 'localhost',
-  database: 'votre_base_de_donnees',
-  password: 'votre_mot_de_passe',
-  port: 5432,
-});
-
-// Middleware pour parser le JSON
+app.use(cors());
 app.use(express.json());
 
-// Route de test
-app.get('/', (req, res) => {
-  res.send('Backend opérationnel !');
+const db = mysql.createConnection({
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
 });
 
-// Exemple de route pour récupérer des bâtiments
-app.get('/buildings', async (req, res) => {
-  try {
-    const result = await pool.query('SELECT * FROM buildings');
-    res.json(result.rows);
-  } catch (err) {
-    console.error(err);
-    res.status(500).send('Erreur serveur');
+db.connect(err => {
+  if (err) throw err;
+  console.log("✅ Connecté à MySQL avec XAMPP");
+});
+
+// Route pour obtenir les bâtiments avec filtrage par classe énergétique
+app.get('/api/batiments', (req, res) => {
+  const { classe_consommation_energie } = req.query;  // Récupérer la classe depuis la requête
+  let query = 'SELECT * FROM batiments';
+
+  if (classe_consommation_energie) {
+    // Si une ou plusieurs classes sont spécifiées, on ajoute le filtrage dans la requête SQL
+    const classesArray = classe_consommation_energie.split(',').map(c => `'${c}'`).join(', ');
+    query += ` WHERE classe_consommation_energie IN (${classesArray})`;
   }
+
+  db.query(query, (err, results) => {
+    if (err) throw err;
+
+    // Convertir les résultats en GeoJSON
+    const geojson = {
+      type: "FeatureCollection",
+      features: results.map(row => ({
+        type: "Feature",
+        geometry: {
+          type: "Point",
+          coordinates: [row.longitude, row.latitude]
+        },
+        properties: { ...row }
+      }))
+    };
+
+    res.json(geojson);  // Retourner le GeoJSON
+  });
 });
 
-// Démarrage du serveur
-app.listen(port, () => {
-  console.log(`Serveur démarré sur http://localhost:${port}`);
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`🚀 Serveur backend tournant sur http://localhost:${PORT}`);
+});
+// GET /api/batiments/classes
+app.get('/api/batiments/classes', (req, res) => {
+  const sql = `
+    SELECT DISTINCT TRIM(UPPER(classe_consommation_energie)) AS classe
+    FROM batiments
+    WHERE classe_consommation_energie IS NOT NULL
+    ORDER BY classe
+  `;
+  db.query(sql, (err, results) => {
+    if (err) return res.status(500).json({ error: 'Erreur base' });
+    // Retourne un simple tableau de chaînes ["A","B","C",...]
+    res.json(results.map(r => r.classe));
+  });
 });
