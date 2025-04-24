@@ -1,12 +1,38 @@
 # backend/Dockerfile.backend
-FROM node:18
+# Utilise node:18-slim pour une image plus légère
+FROM node:18-slim
 
+# 1) Définition du répertoire de travail
 WORKDIR /app
+
+# 2) Installation des dépendances système nécessaires à la compilation des modules natifs
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    python3 \
+    pkg-config \
+    libx11-dev \
+    libxi-dev \
+    libxext-dev \
+    libgl1-mesa-dev \
+    libglu1-mesa-dev \
+    libgbm-dev \
+    libcairo2-dev \
+    libpango1.0-dev \
+    libjpeg-dev \
+    libgif-dev \
+    librsvg2-dev \
+  && ln -s /usr/bin/python3 /usr/bin/python \
+  && rm -rf /var/lib/apt/lists/*
+
+# 3) Copier les fichiers de dépendances et installer avec npm ci pour une installation fiable
 COPY backend/package*.json ./
-RUN npm install
 
-COPY backend/server.js .
-COPY backend/.env .
+# Installer les dépendances Node.js sans les dépendances optionnelles pour éviter gl
+RUN npm ci --silent --no-optional
 
+# 4) Copier le reste du code source
+COPY backend/. ./
+
+# 5) Exposition du port et démarrage
 EXPOSE 5000
 CMD ["node", "server.js"]

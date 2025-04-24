@@ -166,7 +166,14 @@ const ModelPrediction: React.FC = () => {
                     barSize={20}
                     data={chartData}
                   >
-                    <RadialBar minAngle={15} clockWise dataKey="uv" background />
+<RadialBar
+  {...({
+    minAngle: 15,
+    clockWise: true,
+    dataKey: 'uv',
+    background: true
+  } as any)}
+/>
                     <Legend layout="vertical" verticalAlign="middle" align="center" />
                   </RadialBarChart>
                 </ResponsiveContainer>

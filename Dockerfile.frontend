@@ -9,24 +9,27 @@ COPY package*.json ./
 # Mettre à jour npm
 RUN npm install -g npm@latest
 
-# Installer les dépendances
-RUN npm install
+
+
+# Réinstaller les dépendances (en utilisant npm ci pour une installation propre)
+RUN npm ci --silent --no-optional
+RUN npm install -g serve
+
 
 # Copier les fichiers de configuration
-COPY vite.config.ts ./
-COPY tsconfig.app.json ./
-COPY tsconfig.json ./
-COPY tsconfig.node.json ./
+COPY vite.config.ts ./vite.config.ts
+COPY tsconfig.app.json ./tsconfig.app.json
+COPY tsconfig.json ./tsconfig.json
+COPY tsconfig.node.json ./tsconfig.node.json
 
-# Copier les sources de l'application
+# Copier les sources de l'application1
 COPY public ./public
 COPY src ./src
-
-# Construire l'application
+COPY index.html ./index.html
+COPY eslint.config.js ./eslint.config.js
+# Construire l'application frontend
 RUN npm run build
-
 # Exposer le port utilisé par Vite
 EXPOSE 5173
-
 # Démarrer le serveur de développement
 CMD ["npm", "run", "dev"]
