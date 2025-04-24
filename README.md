@@ -1,102 +1,152 @@
-# 3D Building Visualization App
+# 🏢 3D Building Visualization App
 
-Application web interactive pour visualiser des données de bâtiments en 3D avec des informations sur la consommation énergétique.
+Application web interactive pour visualiser en 3D les données énergétiques des bâtiments en France.  
+Affichage cartographique, classes DPE, estimation des GES, et moteur IA pour enrichissement des données.
 
-## Fonctionnalités principales
+## 🚀 Fonctionnalités principales
 
-### Visualisation des bâtiments et DPE
+- 🌍 Carte 3D interactive via Three.js + Mapbox  
+- 🎨 Coloration par classe DPE (A à G)  
+- 🔎 Infobulles : consommation, surface, GES, année, DPE  
+- 📁 Chargement de fichiers GeoJSON  
+- 🤖 Module IA Node.js pour traitement ou enrichissement  
+- 🔧 Architecture modulaire & conteneurisée (Docker)  
 
-L'application affiche les bâtiments sur une carte 3D avec :
-- **Couleurs selon la classe énergétique** :
-  - A (vert) à G (marron)
-  - Taille des marqueurs proportionnelle à la consommation
-- **Infobulles détaillées** incluant :
-  - Consommation énergétique (kWh/m²/an)
-  - Estimation des gaz à effet de serre
-  - Surface thermique
-  - Année de construction
-  - Date du DPE
+## 🧱 Structure du projet
 
-### Données utilisées
-- **Fichier GeoJSON principal** : `data/dpe-france.geojson`
-  - Contient toutes les informations DPE
-  - Structure 3D des bâtiments
-- **Données complémentaires** :
-  - `data/consommation-tertiaire-activite.geojson`
-  - `data/operat_data.geojson`
-
-### Navigation interactive
-- Vue 3D avec contrôle de la caméra
-- Barre de recherche intégrée
-- Zoom et rotation des bâtiments
-
-## Technologies utilisées
-
-- Frontend:
-  - React + TypeScript
-  - Vite (build tool)
-  - Three.js (rendu 3D)
-  - Mapbox (fond de carte)
-  
-- Backend:
-  - Node.js
-  - Express
-
-- Données:
-  - GeoJSON (consommation énergétique, DPE)
-
-## Installation
-
-1. Cloner le dépôt :
-```bash
-git clone https://server-rtit-consulting.com/billyan/skills4mind.git
-cd 3d-building-visualization-app
+```
+3d-building-visualization-app/
+├── backend/          # Serveur Express (API + IA)
+│   ├── server.js
+│   ├── Dockerfile.backend
+│   └── IA/           # Module IA personnalisé
+│       └── recoveD.mjs
+├── src/         # Application React + Three.js
+│   ├── index.html
+│   └── Dockerfile.frontend
+├── data/             # Données GeoJSON
+│   ├── dpe-france.geojson
+│   └── ...
+├── docker-compose.yml
 ```
 
-2. Installer les dépendances :
+## ⚙️ Technologies
+
+### Frontend
+- React (TypeScript)
+- Vite
+- Three.js pour le rendu 3D
+- Mapbox GL JS pour la cartographie
+
+### Backend
+- Node.js 18
+- Express.js
+- API pour les données GeoJSON + IA
+
+### IA
+- Module en ES Module (.mjs) compatible avec Node.js
+- Nécessite `"type": "module"` dans package.json
+
+### Données
+- `data/dpe-france.geojson` : principaux bâtiments
+- `data/consommation-tertiaire-activite.geojson`
+- `data/operat_data.geojson`
+
+## 🐳 Utilisation avec Docker
+
+Assurez-vous d’avoir Docker installé.
+
+## 🛠️ Initialisation de la base de données
+
+Si vous utilisez XAMPP/WAMP avec MySQL :
+
+1. Assurez-vous que le serveur MySQL fonctionne (localhost, port 3306 par défaut)
+2. Modifiez les identifiants dans `backend/setupDB.js` si nécessaire
+3. Exécutez le script de création :
+
+```bash
+node setupDB.js
+```
+
+Cela va :
+- Créer une base de données `dpe-france`
+- Créer les tables nécessaires
+
+Insérer automatiquement les données GeoJSON
+
+```bash
+node insertDataJSON.mjs
+```
+
+la base de donnees est cree et les donnees sont pret a l'emploi
+
+### Lancer l’application
+
+```bash
+git clone https://github.com/stevengweha/3d-building-visualization-app.git
+cd 3d-building-visualization-app
+git checkout steve-app-v1
+
+# Démarrage avec Docker
+docker-compose up --build
+```
+
+Services disponibles :
+- Frontend : http://localhost:5173  
+- Backend API : http://localhost:5000  
+- IA (si activée) : http://localhost:5000/ia  
+
+## 🔍 Commandes utiles en développement
+
+### Frontend
+
 ```bash
 npm install
-```
-
-3. Lancer l'application :
-```bash
 npm run dev
 ```
 
-L'application sera disponible sur http://localhost:5173/
+### Backend
 
-## Configuration technique
+```bash
+cd backend
+npm install
+node server.js
+```
 
-### Fichiers clés
-- `src/mapDisplay.js` : 
-  - Charge et affiche les données GeoJSON
-  - Configure le rendu 3D et les infobulles
-- `src/components/Map3D.tsx` : 
-  - Gère la visualisation interactive
-  - Intègre la carte avec React
+### Module IA
 
-### Dépendances principales
-- **ESRI ArcGIS API** pour JavaScript :
-  - Visualisation cartographique 3D
-  - Gestion des couches GeoJSON
-  - Widgets interactifs
-- **Three.js** pour le rendu 3D avancé
+```bash
+cd backend/IA
+node recoveD.mjs
+```
 
-## Développement
+## 📝 Astuces techniques
 
-Commandes utiles :
+### Utilisation des ESModules
 
-- `npm run dev` : Lance le serveur de développement
-- `npm run build` : Crée une version de production
-- `npm run lint` : Vérifie le code avec ESLint
-- `npm run preview` : Prévisualise la version de production
+Si vous obtenez cette erreur :
 
-## Auteurs
+```
+SyntaxError: Cannot use import statement outside a module
+```
 
-- PIERRE STEVE NGWEHA PENI- Développeur principal
-- BILL YANN TUENKAM - Autres contributeurs
-- IZAC TIOTE - Autres contributeurs
+Ajoutez `"type": "module"` dans le fichier `backend/package.json` :
 
-## Licence
+```json
+{
+  "type": "module",
+  ...
+}
+```
 
-[MIT](LICENSE) - Libre d'utilisation et modification
+Et utilisez `.mjs` comme extension pour les fichiers qui utilisent `import`.
+
+## 👨‍💻 Auteurs
+
+- Pierre Steve NGWEHA PENI – Développeur principal  
+- Bill Yann TUENKAM – Contributeur  
+- Izac Tiote – Contributeur  
+
+## 📄 Licence
+
+MIT
