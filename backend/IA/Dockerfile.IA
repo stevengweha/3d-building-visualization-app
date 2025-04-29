@@ -17,14 +17,14 @@ RUN apt-get update && apt-get install -y \
  && rm -rf /var/lib/apt/lists/*
 
 # Copie des fichiers package.json à la racine (pour npm install)
-COPY ../package*.json ./
-RUN npm ci --no-optional
+COPY backend/package*.json ./backend/
+RUN cd backend && npm ci --no-optional
+
 
 # Copie tout le backend, y compris IA
 COPY backend ./backend
 
-# Vérifie le contenu final pour debug
-RUN ls -l backend/IA
+
 
 EXPOSE 5001
 

@@ -27,6 +27,8 @@ COPY public ./public
 COPY src ./src
 COPY index.html ./index.html
 COPY eslint.config.js ./eslint.config.js
+
+RUN npm install axios@latest
 # Construire l'application frontend
 RUN npm run build
 # Exposer le port utilisé par Vite

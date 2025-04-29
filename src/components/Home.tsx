@@ -11,7 +11,7 @@ const Home: React.FC = () => {
           <div className="nav-links">
             <Link to="/" className="nav-link">Accueil</Link>
             <Link to="/about" className="nav-link">À propos</Link>
-            <Link to="/contact" className="nav-link">S'engager</Link>
+            <Link to="/login" className="nav-link">S'engager</Link>
           </div>
         </div>
       </nav>

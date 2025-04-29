@@ -41,7 +41,7 @@ Affichage cartographique, classes DPE, estimation des GES, et moteur IA pour enr
 ### Backend
 - Node.js 18
 - Express.js
-- API pour les données GeoJSON + IA
+- Mysql + IA
 
 ### IA
 - Module en ES Module (.mjs) compatible avec Node.js
@@ -51,6 +51,17 @@ Affichage cartographique, classes DPE, estimation des GES, et moteur IA pour enr
 - `data/dpe-france.geojson` : principaux bâtiments
 - `data/consommation-tertiaire-activite.geojson`
 - `data/operat_data.geojson`
+
+
+##  recuperer le code de l'application
+
+```bash
+git clone https://server-rtit-consulting.com/billyan/skills4mind.git
+cd 3d-building-visualization-app
+git checkout steve-app-v1
+
+```
+
 
 ## 🐳 Utilisation avec Docker
 
@@ -67,10 +78,22 @@ Si vous utilisez XAMPP/WAMP avec MySQL :
 ```bash
 node setupDB.js
 ```
-
 Cela va :
 - Créer une base de données `dpe-france`
 - Créer les tables nécessaires
+
+
+si il y a une erreur, ouvrez un terminal et faites :
+
+```bash
+npm install mysql2
+```
+ou 
+
+```bash
+npm install mysql
+```
+
 
 Insérer automatiquement les données GeoJSON
 
@@ -83,18 +106,28 @@ la base de donnees est cree et les donnees sont pret a l'emploi
 ### Lancer l’application
 
 ```bash
-git clone https://github.com/stevengweha/3d-building-visualization-app.git
-cd 3d-building-visualization-app
-git checkout steve-app-v1
+# construction des images Docker
+docker-compose build
+```
 
-# Démarrage avec Docker
-docker-compose up --build
+en suite 
+
+```bash
+# Démarrage des contenneur
+docker-compose up
 ```
 
 Services disponibles :
 - Frontend : http://localhost:5173  
 - Backend API : http://localhost:5000  
 - IA (si activée) : http://localhost:5000/ia  
+
+
+
+
+
+
+
 
 ## 🔍 Commandes utiles en développement
 
