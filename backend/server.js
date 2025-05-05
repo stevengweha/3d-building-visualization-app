@@ -50,6 +50,11 @@ app.get('/api/batiments', (req, res) => {
   });
 });
 
+
+// Route pour l'authentification
+const authRoutes = require('./routes/auth'); // 🔁 chemin vers auth.js
+app.use('/api/auth', authRoutes);
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`🚀 Serveur backend tournant sur http://localhost:${PORT}`);

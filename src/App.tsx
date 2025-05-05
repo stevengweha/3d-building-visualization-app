@@ -9,7 +9,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/Home" element={<Home />} />
         <Route path="/map3d" element={<Map3D />} />
         <Route path="/ModelPrediction" element={<ModelPrediction />} />
         <Route path="/login" element={<Login />} />

@@ -1,0 +1,76 @@
+/* Container pour centrer le contenu */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #f0f4f8, #c7e1f3);
+  }
+  
+  /* Formulaire avec bord arrondi et ombre */
+  .form-container {
+    background-color: white;
+    padding: 40px 50px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+  }
+  
+  /* Titre stylisé */
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  /* Champs d'entrée stylisés */
+  .input-field {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: 0.3s ease;
+  }
+  
+  /* Effet de focus sur les champs d'entrée */
+  .input-field:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.2);
+  }
+  
+  /* Bouton d'inscription stylisé */
+  .submit-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    background-color: #45a049;
+  }
+  
+  /* Message de retour */
+  .message {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #d9534f;
+  }
+  
+  /* Responsive design pour petit écran */
+  @media (max-width: 600px) {
+    .form-container {
+      width: 90%;
+    }
+  }
+  
